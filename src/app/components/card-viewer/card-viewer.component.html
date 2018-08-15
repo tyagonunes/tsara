@@ -1,0 +1,11 @@
+
+  <div class="content">
+    <mat-icon  (click)="back()">arrow_back</mat-icon>
+    <h5 class="center">{{article.titulo}}</h5>
+    
+    <figure class="center">
+      <img [src]="article.banner" alt="">
+    </figure>
+    
+    <div [innerHTML]="article.conteudo"></div>
+  </div>

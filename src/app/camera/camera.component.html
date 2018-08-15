@@ -1,0 +1,29 @@
+<div class="row">
+    <button mat-raised-button (click)="start()" color="primary">Play</button>
+    <!-- <button (click)="toggleControls()" class="btn btn-success">Toggle Controls</button> -->
+    <button mat-raised-button (click)="pause()" color="primary">Pause</button>
+    <button mat-raised-button (click)="resume()" color="primary">Resume</button>
+    <!-- <button mat-raised-button (click)="sound()" color="primary">Play with Sound</button> -->
+</div>
+
+<div class="row">
+    <div class="col m12">
+        <div class="text-center">
+            <h3>
+                <video width="100%" height="auto" #videoElement></video>
+            </h3>
+        </div>
+    </div>
+</div>
+
+<div class="row" *ngIf="cameraReady">
+    <div>
+        <button  mat-raised-button color="primary"  (click)="capture()">Fotografar</button>
+    </div>
+    <canvas #canvas id="canvas" width="640" height="480"></canvas>
+    <ul>
+        <li *ngFor="let c of captures">
+            <img src="{{ c }}" height="70" />
+        </li>
+    </ul>
+</div>

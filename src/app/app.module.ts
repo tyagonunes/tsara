@@ -14,16 +14,17 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { MyNavComponent } from './my-nav/my-nav.component';
 import * as jQuery from 'jquery';
 import { routing } from './app.routes';
-import { NewsComponent } from './news/news.component';
-import { ArticlesComponent } from './articles/articles.component';
+import { LocationComponent } from './location/location.component';
+import { CameraComponent } from './camera/camera.component';
+import { ComponentsModule } from './components/components.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     MyNavComponent,
     DashboardComponent,
-    NewsComponent,
-    ArticlesComponent
+    LocationComponent,
+    CameraComponent
   ],
   imports: [
     routing,
@@ -40,7 +41,8 @@ import { ArticlesComponent } from './articles/articles.component';
     MatCardModule,
     BrowserAnimationsModule,
     MatMenuModule,
-    MaterializeModule
+    MaterializeModule,
+    ComponentsModule
   ],
   providers: [
     { provide: LOCALE_ID, useValue: "pt-BR" },

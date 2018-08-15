@@ -1,24 +1,8 @@
 <div class="grid-container">
-  <h2 class="mat-h2 center">Notícias</h2>
-  <mat-grid-list cols="1" rowHeight="300px">
-    <mat-grid-tile *ngFor="let noticia of noticias">
-      <mat-card class="dashboard-card">
-        <mat-card-header>
-          <mat-card-title>
-            {{noticia.titulo}}
-            <!-- <button mat-icon-button class="more-button" [matMenuTriggerFor]="menu" aria-label="Toggle menu">
-              <mat-icon>more_vert</mat-icon>
-            </button>
-            <mat-menu #menu="matMenu" xPosition="before">
-              <button mat-menu-item>Expand</button>
-              <button mat-menu-item>Remove</button>
-            </mat-menu> -->
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content class="dashboard-card-content">
-          <div><img [src]="noticia.banner" alt=""></div>
-        </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+  <h2 class="mat-h2 center">Opções Nativas</h2>
+  
+  <div class="buttons-menu">
+    <button mat-raised-button color="primary" routerLink="/camera">Câmera</button>
+    <button mat-raised-button color="primary" routerLink="/location">Localização</button>
+  </div>
 </div>

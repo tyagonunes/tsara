@@ -1,0 +1,13 @@
+<div class="container">
+  <h5 class="center">Localização do dispositivo</h5>
+
+  <button mat-raised-button class="m-t m-b" color="primary" (click)="getPosition()">Buscar localização</button>
+
+
+  <div class="panel-location" *ngIf="locationReady">
+    <p><b>Latitude:</b> {{location.coords.latitude}}</p>
+    <p><b>Longitude:</b> {{location.coords.longitude}}</p>
+    <p><b>Precisão:</b> {{location.coords.accuracy}} m</p>
+  </div>
+  
+</div>

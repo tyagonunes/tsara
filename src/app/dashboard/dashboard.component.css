@@ -2,7 +2,7 @@
   margin: 20px;
 }
 
-.dashboard-card {
+/* .dashboard-card {
   position: absolute;
   top: 15px;
   left: 15px;
@@ -18,4 +18,10 @@
 
 .dashboard-card-content {
   text-align: center;
+} */
+
+.buttons-menu button {
+    display: block;
+    width: 100%;
+    margin: 10px auto;
 }
