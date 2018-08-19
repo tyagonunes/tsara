@@ -1,0 +1,25 @@
+<div class="container">
+  <h5 class="center m-b">Acesso ao sistema de arquivos do dispositivo</h5>
+
+  <div class="center">
+    <a mat-raised-button class="btn-file" color="primary"> Escolher arquivos
+      <input type="file" id="avatar" (change)="onFileChange($event)" multiple>
+    </a>
+  </div>
+
+  <div *ngIf="files" class="m-t">
+    <mat-card *ngFor="let file of files" class="m-t m-b">
+      <mat-card-content>
+
+        <p>
+          <b>Nome:</b> {{file.name}}</p>
+        <p *ngIf="file.type">
+          <b>Tipo:</b> {{file.type}}</p>
+        <p>
+          <b>Tamanho:</b> {{file.size}} bits</p>
+        <p>
+          <b>Última modificação:</b> {{file.lastModifiedDate | date:'short'}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

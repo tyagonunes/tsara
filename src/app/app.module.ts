@@ -7,6 +7,7 @@ import { environment } from '../environments/environment';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
 import { MaterializeModule } from 'angular2-materialize';
+import {ReactiveFormsModule} from "@angular/forms"
 
 import { LOCALE_ID } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -17,6 +18,7 @@ import { routing } from './app.routes';
 import { LocationComponent } from './location/location.component';
 import { CameraComponent } from './camera/camera.component';
 import { ComponentsModule } from './components/components.module';
+import { FileAccessComponent } from './file-access/file-access.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +26,13 @@ import { ComponentsModule } from './components/components.module';
     MyNavComponent,
     DashboardComponent,
     LocationComponent,
-    CameraComponent
+    CameraComponent,
+    FileAccessComponent
   ],
   imports: [
     routing,
     BrowserModule,
+    ReactiveFormsModule,
     HttpModule,
     ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production }),
     LayoutModule,
@@ -45,7 +49,7 @@ import { ComponentsModule } from './components/components.module';
     ComponentsModule
   ],
   providers: [
-    { provide: LOCALE_ID, useValue: "pt-BR" },
+    // { provide: LOCALE_ID, useValue: "pt-BR" },
   ],
   bootstrap: [AppComponent]
 })
