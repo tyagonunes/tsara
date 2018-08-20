@@ -1,0 +1,31 @@
+<div class="container">
+  <h5 class="center">Persistência de dados no dispositivo</h5>
+
+  <form #f="ngForm" (submit)="save(f.value)" class="m-t-xl">
+
+    <div class="form-group">
+      <label for="">Insira uma nota a ser salva</label>
+      <input type="text" class="form-control" #note="ngModel" name="note" ngModel required>
+      <div *ngIf="f.submitted && note.invalid" class="invalid-feedback">
+          <div *ngIf="note.errors.required">Campo obrigatório</div>
+      </div>
+    </div>
+    <div class="form-group m-t">
+      <button mat-raised-button class="m-t m-b" [disabled]="!f.valid" color="primary">Adicionar item</button>
+    </div>
+  </form>
+
+
+  <div *ngIf="notes.length">
+    <mat-card class="m-t m-b" *ngFor="let n of notes">
+      <mat-card-content>
+        <p><b>Nota:</b> {{n.text}}</p>
+        <p><b>Criação:</b> {{n.date | date:'medium'}}</p>
+      </mat-card-content>
+    </mat-card>
+
+    <div class="center m-t">
+        <button mat-raised-button class="m-t m-b" color="primary" (click)="clearStorage()">Limpar Storage</button>
+      </div>
+  </div>
+</div>

@@ -8,6 +8,7 @@ import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
 import { MaterializeModule } from 'angular2-materialize';
 import {ReactiveFormsModule} from "@angular/forms"
+import { FormsModule } from '@angular/forms';
 
 import { LOCALE_ID } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -19,6 +20,7 @@ import { LocationComponent } from './location/location.component';
 import { CameraComponent } from './camera/camera.component';
 import { ComponentsModule } from './components/components.module';
 import { FileAccessComponent } from './file-access/file-access.component';
+import { OfflineStorageComponent } from './offline-storage/offline-storage.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { FileAccessComponent } from './file-access/file-access.component';
     DashboardComponent,
     LocationComponent,
     CameraComponent,
-    FileAccessComponent
+    FileAccessComponent,
+    OfflineStorageComponent
   ],
   imports: [
     routing,
@@ -46,7 +49,8 @@ import { FileAccessComponent } from './file-access/file-access.component';
     BrowserAnimationsModule,
     MatMenuModule,
     MaterializeModule,
-    ComponentsModule
+    ComponentsModule,
+    FormsModule
   ],
   providers: [
     // { provide: LOCALE_ID, useValue: "pt-BR" },

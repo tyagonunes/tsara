@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '../services/network/news.service';
 
 @Component({
   selector: 'app-location',
@@ -11,7 +10,7 @@ export class LocationComponent implements OnInit {
   public location;
   public locationReady;
 
-  constructor(private _newsService:NewsService) { }
+  constructor() { }
 
   ngOnInit() {
    

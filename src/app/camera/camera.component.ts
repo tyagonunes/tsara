@@ -10,16 +10,31 @@ export class CameraComponent implements OnInit {
 	@ViewChild('videoElement') videoElement: any;
 	@ViewChild("canvas") canvas: ElementRef;
 
+
+
 	public captures: Array<any>;
 	public video: any;
 	public displayControls: any;
 	public theStream: any;
 	public cameraReady: boolean;
 
+	public notSuported: boolean;
 
 	constructor() {
 		this.captures = [];
+
+		this.status()
 	}
+
+	status() {
+		var browser = <any>navigator;
+		if (!browser.getUserMedia && !browser.webkitGetUserMedia &&
+			!browser.mozGetUserMedia && !browser.msGetUserMedia) {
+				console.log(browser)
+				this.notSuported = true
+		}
+	}
+
 
 	ngOnInit() { this.video = this.videoElement.nativeElement; }
 

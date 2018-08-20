@@ -1,10 +1,15 @@
 <div class="container">
-    <h5 class="center m-b">Acesso ao sistema de arquivos do dispositivo</h5>
-    <div class="center m-t m-b">Controles</div>
-    <div class="row center">
-        <button mat-raised-button (click)="start()" color="primary">Play</button>
-        <button mat-raised-button (click)="pause()" color="primary">Pause</button>
-        <button mat-raised-button (click)="resume()" color="primary">Resume</button>
+    <h5 class="center m-b">Acesso a câmera do dispositivo</h5>
+
+    <div class="center m-t m-b" *ngIf="notSuported"> Funcionalidade não suportada nesse dispositivo!</div>
+
+    <div class="row" *ngIf="!notSuported">
+        <div class="center m-t m-b">Controles</div>
+        <div class="row center">
+            <button mat-raised-button (click)="start()" color="primary">Play</button>
+            <button mat-raised-button (click)="pause()" color="primary">Pause</button>
+            <button mat-raised-button (click)="resume()" color="primary">Resume</button>
+        </div>
     </div>
 
     <div class="row">
