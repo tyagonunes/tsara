@@ -1,0 +1,28 @@
+<mat-card >
+  <mat-card-header>
+  </mat-card-header>
+  <mat-card-content>
+      <p>É necessário requisitar pemissão para navegador para enviar notificações</p>
+      <button mat-raised-button color="primary" (click)="requestPermission()">Habilitar permissão</button>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <h5>Notificações persistentes</h5>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Notificações persistentes são entregáveis ​​e possíveis de interagir 
+          também quando o aplicativo da Web que as gerou não está mais ativo (isto é, a guia foi fechada)</p>
+    <button mat-raised-button color="primary" (click)="nonPersistentNotification()">Exemplo</button>
+  </mat-card-content>
+</mat-card>
+<mat-card>
+  <mat-card-header>
+    <h5>Notificações não persistentes</h5>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Notificações não persistentes exigem que a guia esteja ativa ára serem lançadas.</p>
+    <button mat-raised-button color="primary" (click)="persistentNotification()">Exemplo</button>
+  </mat-card-content>
+</mat-card>
+

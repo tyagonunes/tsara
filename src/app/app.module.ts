@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { LayoutModule } from '@angular/cdk/layout';
-import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { MaterializeModule } from 'angular2-materialize';
 import {ReactiveFormsModule} from "@angular/forms"
 import { FormsModule } from '@angular/forms';
@@ -21,6 +21,7 @@ import { CameraComponent } from './camera/camera.component';
 import { ComponentsModule } from './components/components.module';
 import { FileAccessComponent } from './file-access/file-access.component';
 import { OfflineStorageComponent } from './offline-storage/offline-storage.component';
+import { PushNotificationComponent } from './push-notification/push-notification.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { OfflineStorageComponent } from './offline-storage/offline-storage.compo
     LocationComponent,
     CameraComponent,
     FileAccessComponent,
-    OfflineStorageComponent
+    OfflineStorageComponent,
+    PushNotificationComponent
   ],
   imports: [
     routing,
@@ -48,6 +50,7 @@ import { OfflineStorageComponent } from './offline-storage/offline-storage.compo
     MatCardModule,
     BrowserAnimationsModule,
     MatMenuModule,
+    MatSnackBarModule,
     MaterializeModule,
     ComponentsModule,
     FormsModule

@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
 	selector: 'app-articles',
@@ -20,7 +21,7 @@ export class CameraComponent implements OnInit {
 
 	public notSuported: boolean;
 
-	constructor() {
+	constructor(public snackBar: MatSnackBar) {
 		this.captures = [];
 
 		this.status()
@@ -30,7 +31,7 @@ export class CameraComponent implements OnInit {
 		var browser = <any>navigator;
 		if (!browser.getUserMedia && !browser.webkitGetUserMedia &&
 			!browser.mozGetUserMedia && !browser.msGetUserMedia) {
-				console.log(browser)
+				this.snackBar.open("Seu navegador não suporta essa funcionalidade", "ok", { duration: 5000, verticalPosition:'bottom'}) 
 				this.notSuported = true
 		}
 	}
@@ -42,7 +43,9 @@ export class CameraComponent implements OnInit {
 	sound() { this.initCamera({ video: true, audio: true }) }
 
 	resume() { this.video.play() }
-	pause() { this.video.pause() }
+	pause() {
+		this.video.pause() 
+	}
 
 	initCamera(config: any) {
 		var browser = <any>navigator;
@@ -58,7 +61,7 @@ export class CameraComponent implements OnInit {
 
 			this.theStream = stream;
 			this.cameraReady = true;
-		});
+		})
 	}
 
 	capture() {

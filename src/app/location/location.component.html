@@ -1,5 +1,7 @@
 <div class="container">
   <h5 class="center">Acesso a localização do dispositivo</h5>
+  <p class="center">A API de geolocalização permite que aplicativos da Web autorizados acessem os dados de 
+    localização fornecidos pelo dispositivo - obtidos usando o GPS ou do ambiente de rede</p>
 
   <button mat-raised-button class="m-t m-b" color="primary" (click)="getPosition()">Buscar localização</button>
 
@@ -11,5 +13,4 @@
       <p><b>Precisão:</b> {{location.coords.accuracy}} m</p>
     </mat-card-content>
   </mat-card>
-  
 </div>

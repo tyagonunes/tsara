@@ -4,6 +4,7 @@ import { LocationComponent } from './location/location.component';
 import { CameraComponent } from './camera/camera.component';
 import { FileAccessComponent } from './file-access/file-access.component';
 import { OfflineStorageComponent } from './offline-storage/offline-storage.component';
+import { PushNotificationComponent } from './push-notification/push-notification.component';
 
 const appRoutes: Routes = [
   
@@ -13,6 +14,7 @@ const appRoutes: Routes = [
     { path: 'camera', component: CameraComponent},
     { path: 'file', component: FileAccessComponent},
     { path: 'offline-storage', component: OfflineStorageComponent},
+    { path: 'push-notification', component: PushNotificationComponent},
     { path: '**', redirectTo: '' },
   
   ]

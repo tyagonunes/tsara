@@ -1,0 +1,7 @@
+mat-card {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+mat-card mat-card-header { text-align: center; }
+mat-card mat-card-content { text-align: center; }

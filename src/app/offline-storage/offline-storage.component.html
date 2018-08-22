@@ -1,11 +1,12 @@
 <div class="container">
-  <h5 class="center">Persistência de dados no dispositivo</h5>
+  <h5 class="center">Armazenamento offline</h5>
+  <div class="center">Recurso de armazenamento offline para aplicativos da Web</div>
 
   <form #f="ngForm" (submit)="save(f.value)" class="m-t-xl">
 
-    <div class="form-group">
-      <label for="">Insira uma nota a ser salva</label>
-      <input type="text" class="form-control" #note="ngModel" name="note" ngModel required>
+    <div class="">
+      <label>Insira uma nota a ser salva</label>
+      <input matInput type="text"  #note="ngModel" name="note" ngModel required>
       <div *ngIf="f.submitted && note.invalid" class="invalid-feedback">
           <div *ngIf="note.errors.required">Campo obrigatório</div>
       </div>

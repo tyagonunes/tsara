@@ -3,7 +3,10 @@
 
     <div class="center m-t m-b" *ngIf="notSuported"> Funcionalidade não suportada nesse dispositivo!</div>
 
-    <div class="row" *ngIf="!notSuported">
+    <div class="center">A API de captura de imagens permite que os aplicativos da Web controlem as configurações avançadas da câmera do dispositivo, como zoom, 
+        balanço de branco, ISO ou pontos de foco, e tire fotos com base nessas configurações.</div> 
+    
+        <div class="row" *ngIf="!notSuported">
         <div class="center m-t m-b">Controles</div>
         <div class="row center">
             <button mat-raised-button (click)="start()" color="primary">Play</button>
@@ -24,12 +27,12 @@
 
     <div class="row" *ngIf="cameraReady">
         <div class="center">
-            <button mat-raised-button color="primary" (click)="capture()">Fotografar</button>
+            <button mat-raised-button color="primary" (click)="capture()">Tirar foto</button>
         </div>
         <canvas #canvas id="canvas" width="640" height="480"></canvas>
         <ul>
             <li *ngFor="let c of captures">
-                <img src="{{ c }}" height="70" />
+                <img src="{{ c }}" height="100" width="70" />
             </li>
         </ul>
     </div>
