@@ -11,8 +11,6 @@ export class CameraComponent implements OnInit {
 	@ViewChild('videoElement') videoElement: any;
 	@ViewChild("canvas") canvas: ElementRef;
 
-
-
 	public captures: Array<any>;
 	public video: any;
 	public displayControls: any;
@@ -23,9 +21,10 @@ export class CameraComponent implements OnInit {
 
 	constructor(public snackBar: MatSnackBar) {
 		this.captures = [];
-
 		this.status()
 	}
+	
+	ngOnInit() { this.video = this.videoElement.nativeElement; }
 
 	status() {
 		var browser = <any>navigator;
@@ -36,16 +35,13 @@ export class CameraComponent implements OnInit {
 		}
 	}
 
-
-	ngOnInit() { this.video = this.videoElement.nativeElement; }
-
 	start() { this.initCamera({ video: true, audio: false }) }
+
 	sound() { this.initCamera({ video: true, audio: true }) }
 
 	resume() { this.video.play() }
-	pause() {
-		this.video.pause() 
-	}
+
+	pause() { this.video.pause() }
 
 	initCamera(config: any) {
 		var browser = <any>navigator;
@@ -68,10 +64,4 @@ export class CameraComponent implements OnInit {
 		var context = this.canvas.nativeElement.getContext("2d").drawImage(this.videoElement.nativeElement, 0, 0, 640, 480);
 		this.captures.push(this.canvas.nativeElement.toDataURL("image/png"));
 	}
-
-
-
-
-
-
 }

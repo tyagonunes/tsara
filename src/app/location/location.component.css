@@ -14,3 +14,12 @@ button {
     margin: 35px auto;
     display: block;
 }
+
+.divSpinner {
+    text-align: center;
+    
+    
+}
+.divSpinner mat-spinner {
+    margin: auto;
+}

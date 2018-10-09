@@ -7,8 +7,9 @@ import { environment } from '../environments/environment';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule, MatGridListModule, MatCardModule, MatMenuModule, MatSnackBar, MatSnackBarModule } from '@angular/material';
 import { MaterializeModule } from 'angular2-materialize';
-import {ReactiveFormsModule} from "@angular/forms"
+import { ReactiveFormsModule} from "@angular/forms"
 import { FormsModule } from '@angular/forms';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 
 import { LOCALE_ID } from '@angular/core';
 import { AppComponent } from './app.component';
@@ -53,7 +54,8 @@ import { PushNotificationComponent } from './push-notification/push-notification
     MatSnackBarModule,
     MaterializeModule,
     ComponentsModule,
-    FormsModule
+    FormsModule,
+    MatProgressSpinnerModule,
   ],
   providers: [
     // { provide: LOCALE_ID, useValue: "pt-BR" },

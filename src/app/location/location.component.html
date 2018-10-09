@@ -5,6 +5,9 @@
 
   <button mat-raised-button class="m-t m-b" color="primary" (click)="getPosition()">Buscar localização</button>
 
+  <div class="divSpinner">
+    <mat-spinner *ngIf="loading"></mat-spinner>
+  </div>
 
   <mat-card *ngIf="locationReady">
     <mat-card-content>

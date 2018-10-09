@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-location',
@@ -9,8 +10,9 @@ export class LocationComponent implements OnInit {
   
   public location;
   public locationReady;
+  public loading:boolean;
 
-  constructor() { }
+  constructor(public snackBar: MatSnackBar) { }
 
   ngOnInit() {
    
@@ -18,12 +20,14 @@ export class LocationComponent implements OnInit {
 
   getPosition() {
     if(navigator.geolocation) {
+      this.loading = true
       navigator.geolocation.getCurrentPosition((location) => {
         this.location = location;
         this.locationReady = true;
+        this.loading = false
       })
     } else {
-      alert("Esse navegador nao suporta geolocalização")
+      this.snackBar.open("Seu navegador não suporta essa funcionalidade", "ok", { duration: 5000, verticalPosition: 'bottom' })
     }
   }
 
