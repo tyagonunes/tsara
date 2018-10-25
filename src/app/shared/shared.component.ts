@@ -10,25 +10,23 @@ import { MatSnackBar } from '@angular/material';
 export class SharedComponent implements OnInit {
 
 
-  private ngNavigatorShareService: NgNavigatorShareService;
 
-  constructor(ngNavigatorShareService: NgNavigatorShareService, public snackBar: MatSnackBar) {
-    this.ngNavigatorShareService = ngNavigatorShareService;
+  constructor(
+    private ngNavigatorShareService: NgNavigatorShareService, 
+    public snackBar: MatSnackBar) {
    }
 
   ngOnInit() {
 
   }
 
-  title = 'app';
+
   share() {
     this.ngNavigatorShareService.share({
-      title: 'Compartilhar meu app',
-      text: 'Compartilhe escolhendo uma opção',
-      url: 'https://developers.google.com/web'
-    }).then( (response) => {
-      console.log(response);
-    })
+      title: 'App Native PWA',
+      text: 'Baixe nosso app em PWA',
+      url: 'https://tsara-app.herokuapp.com/'
+    }).then( (response) => {})
     .catch( (error) => {
       this.snackBar.open("Seu navegador não suporta essa funcionalidade", "ok", { duration: 5000, verticalPosition: 'bottom' })
     });
