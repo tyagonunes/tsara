@@ -23,6 +23,7 @@ import { ComponentsModule } from './components/components.module';
 import { FileAccessComponent } from './file-access/file-access.component';
 import { OfflineStorageComponent } from './offline-storage/offline-storage.component';
 import { PushNotificationComponent } from './push-notification/push-notification.component';
+import { SharedComponent } from './shared/shared.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { PushNotificationComponent } from './push-notification/push-notification
     CameraComponent,
     FileAccessComponent,
     OfflineStorageComponent,
-    PushNotificationComponent
+    PushNotificationComponent,
+    SharedComponent
   ],
   imports: [
     routing,
